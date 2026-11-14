@@ -64,7 +64,11 @@ def main():
         Student("SV003", "Le Van C", 19, "K21"),
     ]
 
+
+    # Thêm sinh viên mới
+
     # Thêm sinh viên mới (từ bước trước)
+
     students = add_student(students, "SV004", "Pham Thi D", 22, "K19")
 
     # Hiển thị danh sách
