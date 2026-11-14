@@ -7,6 +7,24 @@ if hasattr(sys.stdout, "reconfigure"):
 
 
 def add_student(students: list, student_id: str, name: str, age: int, grade: str) -> list:
+
+from student import Student
+
+def add_student(students: list, student_id: str, name: str, age: int, grade: str) -> list:
+    """Thêm sinh viên mới vào danh sách.
+
+    Args:
+        students: Danh sách sinh viên hiện tại
+        student_id: Mã sinh viên
+        name: Họ tên
+        age: Tuổi
+        grade: Khóa
+
+    Returns:
+        Danh sách sinh viên đã được cập nhật
+    """
+    # Kiểm tra trùng mã sinh viên
+
     for s in students:
         if s.student_id == student_id:
             print(f"❌ Mã sinh viên {student_id} đã tồn tại!")
@@ -20,7 +38,7 @@ def add_student(students: list, student_id: str, name: str, age: int, grade: str
 
 def main():
     print("=" * 50)
-    print("STUDENT MANAGER — DevOps Lab 5")
+    print("STUDENT MANAGER – DevOps Lab 5")
     print("=" * 50)
 
     students = [
@@ -29,10 +47,15 @@ def main():
         Student("SV003", "Le Van C", 19, "K21"),
     ]
 
+
     students = add_student(students, "SV004", "Pham Thi D", 22, "K19")
 
+    # Thêm sinh viên mới
+    students = add_student(students, "SV004", "Pham Thi D", 22, "K19")
+
+    # Hiển thị danh sách
     for student in students:
-        print(f"  {student}")
+        print(f" {student}")
 
     print(f"\nTotal: {len(students)} students")
     print("=" * 50)
